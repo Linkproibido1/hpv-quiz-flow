@@ -1,12 +1,4 @@
 
-/**
- * WhatsApp Prompts for AI Assistants
- * 
- * These prompts are designed for WhatsApp AI to understand how to offer the product
- * to customers based on their quiz answers and persona type.
- * The AI should use these prompts to guide the conversation and handle objections.
- */
-
 interface WhatsAppPrompt {
   initialMessage: string;
   objections: {
@@ -16,35 +8,35 @@ interface WhatsAppPrompt {
 
 export const whatsappPrompts: Record<string, WhatsAppPrompt> = {
   vergonha: {
-    initialMessage: "Olá! Vi que você está buscando uma solução discreta para eliminar as verrugas. 🌿 Nossa especialista está pronta para te ajudar com total confidencialidade. Entendo que esse é um assunto sensível, e quero te garantir que temos um protocolo específico que já ajudou mais de 23.000 pessoas na mesma situação. Como posso te ajudar hoje?",
+    initialMessage: "Olá! Entendi que você está buscando uma solução discreta para as verrugas. 🌿 Nosso tratamento com Barbatimão é 100% natural e já ajudou mais de 23.000 pessoas na mesma situação. Como posso te ajudar hoje?",
     objections: {
-      preco: "Entendo sua preocupação com o investimento. Temos condições especiais e parcelamento em até 12x. O mais importante é que o tratamento é definitivo, então você economiza com outros tratamentos no futuro.",
-      eficacia: "O Barbatimão tem eficácia comprovada em mais de 97% dos casos. Nosso protocolo exclusivo age diretamente na raiz do problema, eliminando as verrugas de forma natural e permanente.",
-      tempo: "O tratamento começa a agir desde o primeiro dia! A maioria dos nossos pacientes vê resultados significativos em 2 semanas."
+      preco: "Entendo sua preocupação com o investimento. Temos ótimas condições de pagamento, e o mais importante: o tratamento é definitivo.",
+      eficacia: "O Barbatimão tem eficácia comprovada em mais de 97% dos casos. Agimos diretamente na raiz do problema.",
+      tempo: "O tratamento começa a agir desde o primeiro dia! Em 2 semanas você já verá resultados significativos."
     }
   },
   medo: {
-    initialMessage: "Olá! Notei que você está preocupado(a) com o HPV. 🌿 Nosso tratamento é 100% natural e indolor, desenvolvido especialmente para quem busca uma solução segura. Mais de 23.000 pessoas já eliminaram o vírus com nosso protocolo. Como posso te ajudar?",
+    initialMessage: "Olá! Vi que você está preocupado(a) com as verrugas. 🌿 Nosso tratamento é 100% natural e indolor, desenvolvido especialmente para eliminar as verrugas sem causar desconforto. Como posso te ajudar?",
     objections: {
-      preco: "Entendo sua preocupação com o valor. Compare com outros tratamentos: nosso protocolo é mais econômico e oferece resultados permanentes. Temos ótimas condições de pagamento!",
-      eficacia: "Nossa taxa de sucesso é de 97%! O diferencial é que atacamos o vírus na raiz, não apenas os sintomas visíveis.",
-      tempo: "Você verá os primeiros resultados em até 7 dias! O tratamento completo leva 30 dias para eliminar totalmente as verrugas."
+      preco: "Entendo sua preocupação com o valor. Temos excelentes condições de pagamento para você começar hoje mesmo!",
+      eficacia: "Nossa taxa de sucesso é de 97%! O diferencial é que eliminamos o problema na raiz.",
+      tempo: "Você verá os primeiros resultados em até 7 dias! O tratamento completo leva 30 dias."
     }
   },
   tratamento: {
-    initialMessage: "Olá! Vi que você já tentou outros tratamentos sem sucesso. 🌿 Nossa solução com Barbatimão é completamente diferente: age na raiz do problema e já ajudou mais de 23.000 pessoas. Nosso protocolo exclusivo tem 97% de eficácia comprovada. Como posso te ajudar hoje?",
+    initialMessage: "Olá! Entendo que você já tentou outros tratamentos sem sucesso. 🌿 Nossa solução com Barbatimão é diferente: agimos na causa do problema, não apenas nos sintomas. Como posso te ajudar hoje?",
     objections: {
-      preco: "Entendo que você já investiu em outros tratamentos. Por isso, temos condições especiais para que você possa experimentar nossa solução definitiva.",
-      eficacia: "Diferente de outros tratamentos, nosso protocolo age na causa do problema, não apenas nos sintomas. Por isso temos 97% de eficácia!",
-      tempo: "Sei que você já perdeu tempo com outros tratamentos. Com nosso protocolo, você verá resultados já na primeira semana!"
+      preco: "Sei que você já investiu em outros tratamentos. Por isso, temos condições especiais para você experimentar nossa solução definitiva.",
+      eficacia: "Diferente de outros métodos, nosso protocolo elimina o problema na raiz. Por isso temos 97% de eficácia!",
+      tempo: "Entendo sua pressa! Com nosso protocolo, você verá resultados já na primeira semana!"
     }
   },
   negacao: {
-    initialMessage: "Olá! Entendo que você está há mais de 6 meses com esse desafio. 🌿 É importante agir agora! Nosso tratamento natural já ajudou mais de 23.000 pessoas e pode te ajudar também. Que tal conversarmos sobre uma solução definitiva?",
+    initialMessage: "Olá! É importante tratar as verrugas o quanto antes. 🌿 Nosso tratamento natural já ajudou mais de 23.000 pessoas e pode te ajudar também. Como posso te ajudar hoje?",
     objections: {
-      preco: "Investir na sua saúde agora evitará gastos muito maiores no futuro. Temos excelentes condições de pagamento para você começar hoje mesmo!",
-      eficacia: "O tempo de espera pode agravar o problema. Nosso tratamento tem 97% de eficácia e age desde o primeiro dia!",
-      tempo: "Quanto mais tempo passa, mais o problema pode se agravar. Mas não se preocupe: nosso tratamento age rápido, com resultados visíveis em 7 dias!"
+      preco: "Investir na sua saúde agora evitará gastos muito maiores no futuro. Temos ótimas condições de pagamento!",
+      eficacia: "Nossa taxa de sucesso é de 97%! Quanto mais cedo começar, melhores serão os resultados.",
+      tempo: "O tratamento age rápido, com resultados visíveis em 7 dias! Não deixe o problema se agravar."
     }
   }
 };

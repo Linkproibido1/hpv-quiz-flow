@@ -1,3 +1,4 @@
+
 import { QuizQuestion } from "../types/quiz";
 
 export const initialQuestion: QuizQuestion = {
@@ -9,42 +10,25 @@ export const initialQuestion: QuizQuestion = {
 const commonQuestions: QuizQuestion[] = [
   {
     id: 1,
-    question: "Quantas verrugas você possui atualmente?",
+    question: "Qual o seu principal problema com as verrugas?",
     options: [
-      "1-3 verrugas",
-      "4-6 verrugas",
-      "Mais de 6 verrugas"
+      "Verrugas na região íntima",
+      "Verrugas na região anal",
+      "Verrugas em ambas regiões"
     ]
   },
   {
     id: 2,
-    question: "Em quais regiões as verrugas estão localizadas?",
-    options: [
-      "Região genital externa",
-      "Região anal",
-      "Ambas as regiões"
-    ]
-  },
-  {
-    id: 3,
-    question: "Há quanto tempo as verrugas surgiram?",
+    question: "Há quanto tempo você está com este problema?",
     options: [
       "Menos de 3 meses",
-      "3-6 meses",
+      "Entre 3 e 6 meses",
       "Mais de 6 meses"
     ]
   },
   {
-    id: 4,
-    question: "✅ ATENÇÃO! Nosso tratamento com Barbatimão já ajudou mais de 10.000 pessoas a eliminar as verrugas em menos de 30 dias, sem dor e sem cicatrizes. Se você pudesse eliminar TODAS as suas verrugas com um tratamento 100% natural e discreto, você:",
-    options: [
-      "Sim, quero eliminar minhas verrugas",
-      "Preciso pensar mais"
-    ]
-  },
-  {
-    id: 5,
-    question: "Você já tentou algum outro tratamento?",
+    id: 3,
+    question: "Você já tentou algum tratamento anterior?",
     options: [
       "Sim, cauterização",
       "Sim, outros tratamentos",
@@ -52,21 +36,39 @@ const commonQuestions: QuizQuestion[] = [
     ]
   },
   {
-    id: 6,
-    question: "Você tem parceiro(a) fixo(a) ou é casado(a)?",
+    id: 4,
+    question: "Você sente dor ou desconforto por causa das verrugas?",
     options: [
-      "Sim, tenho parceiro(a) fixo(a)",
-      "Sim, sou casado(a)",
-      "Não tenho parceiro(a) fixo(a)"
+      "Sim, bastante dor",
+      "Sim, leve desconforto",
+      "Não sinto dor"
+    ]
+  },
+  {
+    id: 5,
+    question: "As verrugas têm afetado sua vida íntima?",
+    options: [
+      "Sim, muito",
+      "Sim, um pouco",
+      "Não afetou"
+    ]
+  },
+  {
+    id: 6,
+    question: "Como você se sente em relação a este problema?",
+    options: [
+      "Muito preocupado(a)",
+      "Um pouco preocupado(a)",
+      "Quero resolver logo"
     ]
   },
   {
     id: 7,
-    question: "Você já fez exame para confirmar o HPV?",
+    question: "✅ ATENÇÃO! Nosso tratamento com Barbatimão já ajudou mais de 10.000 pessoas a eliminar as verrugas em menos de 30 dias. Você gostaria de começar seu tratamento:",
     options: [
-      "Sim, tenho confirmação",
-      "Não, apenas suspeita",
-      "Aguardando resultado"
+      "Sim, quero começar logo",
+      "Quero mais informações",
+      "Preciso pensar mais"
     ]
   }
 ];
@@ -76,33 +78,34 @@ export const femaleQuestions = commonQuestions;
 
 export const personaMessages = {
   vergonha: {
-    title: "✅ Verificação concluída!",
-    message: "Com base nas suas respostas, você É ELEGÍVEL para o tratamento discreto com Barbatimão.\n\nNossa equipe médica desenvolveu um protocolo específico que elimina as verrugas sem necessidade de exposição constrangedora em consultórios.",
-    alert: "Para sua privacidade, nosso especialista irá te atender em uma conversa 100% confidencial, sem julgamentos."
+    title: "✅ Avaliação Concluída!",
+    message: "Com base nas suas respostas, você é elegível para nosso protocolo exclusivo com Barbatimão.\n\nNosso tratamento é discreto, 100% natural e age diretamente na raiz do problema, eliminando as verrugas em até 30 dias.",
+    alert: "Entendemos sua situação e garantimos total sigilo. Nossa especialista irá te explicar o protocolo de tratamento ideal para o seu caso."
   },
   estetica: {
-    title: "✅ Verificação concluída!",
-    message: "Com base nas suas respostas, você É ELEGÍVEL para nosso protocolo de Remoção Sem Cicatrizes.\n\nNosso tratamento elimina as verrugas sem deixar marcas, preservando a estética natural das suas áreas íntimas.",
-    alert: "Nosso especialista já separou informações sobre como o Barbatimão atua nas camadas profundas da pele para resultados perfeitos."
+    title: "✅ Avaliação Concluída!",
+    message: "Com base nas suas respostas, você é elegível para nosso protocolo exclusivo com Barbatimão.\n\nO tratamento age diretamente nas verrugas, eliminando-as sem deixar cicatrizes e devolvendo a saúde da sua pele.",
+    alert: "Nossa especialista irá te explicar como o Barbatimão age nas camadas profundas da pele, eliminando as verrugas de forma natural e segura."
   },
   medo: {
-    title: "✅ Verificação concluída!",
-    message: "Com base nas suas respostas, você É ELEGÍVEL para nosso Protocolo de Prevenção Avançada.",
-    alert: "Estudos recentes mostram que o HPV não tratado pode evoluir para complicações sérias como câncer.\n\nNossa especialista vai explicar como o Barbatimão pode eliminar o vírus na raiz, prevenindo complicações futuras."
+    title: "✅ Avaliação Concluída!",
+    message: "Com base nas suas respostas, você é elegível para nosso protocolo exclusivo com Barbatimão.\n\nNosso tratamento é 100% natural e indolor, ideal para quem busca uma solução eficaz e segura.",
+    alert: "Nossa especialista vai te explicar como o tratamento age de forma suave, eliminando as verrugas sem dor ou desconforto."
   },
   transmissao: {
-    title: "✅ Verificação concluída!",
-    message: "Com base nas suas respostas, você É ELEGÍVEL para nosso Protocolo de Proteção Dupla.\n\nNossa especialista já preparou informações sobre como o tratamento elimina o vírus HPV e protege você e seu parceiro(a).",
-    alert: "A transmissão do HPV ocorre mesmo sem verrugas visíveis. Vamos te explicar tudo."
+    title: "✅ Avaliação Concluída!",
+    message: "Com base nas suas respostas, você é elegível para nosso protocolo exclusivo com Barbatimão.\n\nNosso tratamento não só elimina as verrugas visíveis, mas também age no sistema imunológico para maior proteção.",
+    alert: "Nossa especialista irá te explicar como o tratamento ajuda a proteger você e seu parceiro(a)."
   },
   tratamento: {
-    title: "✅ Verificação concluída!",
-    message: "Com base nas suas respostas, você É ELEGÍVEL para nosso Protocolo Indolor e Definitivo.\n\nEntendemos sua frustração com tratamentos anteriores. Nossa especialista vai explicar por que o Barbatimão é diferente de qualquer outro método que você já tentou.",
-    alert: "Tratamentos convencionais eliminam apenas 25% do problema. Vamos mostrar como chegar na raiz."
+    title: "✅ Avaliação Concluída!",
+    message: "Com base nas suas respostas, você é elegível para nosso protocolo exclusivo com Barbatimão.\n\nDiferente de outros tratamentos, nossa solução age na causa do problema, não apenas nos sintomas visíveis.",
+    alert: "Nossa especialista vai te explicar por que o Barbatimão é mais eficaz que outros tratamentos convencionais."
   },
   negacao: {
-    title: "✅ Verificação concluída!",
-    message: "Com base nas suas respostas, você É ELEGÍVEL para nosso Protocolo de Tratamento Rápido.",
-    alert: "Mesmo pequenas verrugas podem conter o vírus HPV completo sob a pele (como um iceberg).\n\nNossa especialista vai explicar como eliminar o problema de forma definitiva e rápida, evitando complicações futuras."
+    title: "✅ Avaliação Concluída!",
+    message: "Com base nas suas respostas, você é elegível para nosso protocolo exclusivo com Barbatimão.\n\nQuanto mais cedo você iniciar o tratamento, mais rápido e eficaz será o resultado.",
+    alert: "Nossa especialista irá te explicar a importância de começar o tratamento o quanto antes para evitar o agravamento do problema."
   }
 };
+
