@@ -13,8 +13,7 @@ const commonQuestions: QuizQuestion[] = [
     options: [
       "1-3 verrugas",
       "4-6 verrugas",
-      "Mais de 6 verrugas",
-      "Não tenho certeza"
+      "Mais de 6 verrugas"
     ]
   },
   {
@@ -23,16 +22,14 @@ const commonQuestions: QuizQuestion[] = [
     options: [
       "Região genital externa",
       "Região anal",
-      "Ambas as regiões",
-      "Outras regiões"
+      "Ambas as regiões"
     ]
   },
   {
     id: 3,
     question: "Há quanto tempo as verrugas surgiram?",
     options: [
-      "Menos de 1 mês",
-      "1-3 meses",
+      "Menos de 3 meses",
       "3-6 meses",
       "Mais de 6 meses"
     ]
@@ -42,7 +39,6 @@ const commonQuestions: QuizQuestion[] = [
     question: "Você já tentou algum outro tratamento?",
     options: [
       "Sim, cauterização",
-      "Sim, ácidos/pomadas",
       "Sim, outros tratamentos",
       "Não, nunca tratei"
     ]
@@ -53,8 +49,7 @@ const commonQuestions: QuizQuestion[] = [
     options: [
       "Sim, tenho parceiro(a) fixo(a)",
       "Sim, sou casado(a)",
-      "Não tenho parceiro(a) fixo(a)",
-      "Prefiro não responder"
+      "Não tenho parceiro(a) fixo(a)"
     ]
   },
   {
@@ -63,8 +58,7 @@ const commonQuestions: QuizQuestion[] = [
     options: [
       "Sim, tenho confirmação",
       "Não, apenas suspeita",
-      "Aguardando resultado",
-      "Não sei se preciso fazer"
+      "Aguardando resultado"
     ]
   }
 ];
