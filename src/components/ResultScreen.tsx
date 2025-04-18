@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { PersonaType } from "../types/quiz";
 import { personaMessages } from "../data/quizData";
@@ -16,45 +15,31 @@ export const ResultScreen = ({ persona, onContact, userAnswers = [] }: ResultScr
   const whatsappPrompt = whatsappPrompts[persona];
   
   const createPersonalizedMessage = () => {
-    // Adicionamos um prefixo para a IA identificar facilmente
-    let personalizedMessage = `[QUIZ_DATA]|${persona}|`;
+    // Iniciar a mensagem com o cabeçalho em maiúsculas
+    let personalizedMessage = "OLÁ! ACABEI DE FAZER O QUIZ E ESSES FORAM MEUS RESULTADOS:\n\n";
     
-    // Adicionamos as respostas do cliente num formato que sua IA possa processar
+    // Adicionar as respostas formatadas
     if (userAnswers && userAnswers.length > 0) {
-      personalizedMessage += `${userAnswers[0] || "nao_informado"}|`;
-      personalizedMessage += `${userAnswers[1] || "nao_informado"}|`;
-      personalizedMessage += `${userAnswers[2] || "nao_informado"}|`;
-    } else {
-      personalizedMessage += "nao_informado|nao_informado|nao_informado|";
-    }
-    
-    // Agora começamos a mensagem regular para o cliente
-    personalizedMessage += "\n\n" + whatsappPrompt.initialMessage;
-    
-    // Add personalization based on user answers if they exist - mantendo seu código original
-    if (userAnswers && userAnswers.length > 0) {
-      // Add specific concerns based on answers
-      if (userAnswers[0]) {
-        personalizedMessage += `\n\nVocê mencionou que está com "${userAnswers[0]}". `;
-      }
+      // Problema (resposta 1)
+      personalizedMessage += `PROBLEMA: ${userAnswers[0] || "Não informado"}\n`;
       
-      // Add time with problem if it exists (answer 2)
-      if (userAnswers[1]) {
-        personalizedMessage += `Entendo que você está enfrentando isso há "${userAnswers[1]}". `;
-      }
+      // Tempo com o problema (resposta 2)
+      personalizedMessage += `TEMPO COM O PROBLEMA: ${userAnswers[1] || "Não informado"}\n`;
       
-      // Add treatment history if it exists (answer 3)
+      // Histórico de tratamentos (resposta 3)
+      let tratamento = "Não informado";
       if (userAnswers[2]) {
-        if (userAnswers[2].includes("Sim")) {
-          personalizedMessage += `Vejo que você já tentou outros tratamentos. Nossa solução é diferente! `;
-        } else {
-          personalizedMessage += `Vejo que você ainda não tentou tratamentos. Temos excelentes resultados para casos como o seu! `;
-        }
+        tratamento = userAnswers[2];
       }
+      personalizedMessage += `JÁ TENTEI OUTROS TRATAMENTOS: ${tratamento}\n`;
+    } else {
+      personalizedMessage += "PROBLEMA: Não informado\n";
+      personalizedMessage += "TEMPO COM O PROBLEMA: Não informado\n";
+      personalizedMessage += "JÁ TENTEI OUTROS TRATAMENTOS: Não informado\n";
     }
     
-    // Add closing statement - mantendo seu código original
-    personalizedMessage += "\n\nEstamos prontos para te ajudar. Quando podemos começar seu tratamento?";
+    // Adicionar a pergunta final
+    personalizedMessage += "\nQUERO SABER QUAL O MELHOR PROTOCOLO DE TRATAMENTO PARA MINHA SITUAÇÃO?";
     
     return personalizedMessage;
   };
