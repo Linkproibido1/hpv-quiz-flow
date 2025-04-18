@@ -3,8 +3,8 @@ import { useState } from "react";
 import { WelcomeScreen } from "../components/WelcomeScreen";
 import { QuizQuestion } from "../components/QuizQuestion";
 import { ResultScreen } from "../components/ResultScreen";
-import { quizQuestions } from "../data/quizData";
-import { QuizState, PersonaType } from "../types/quiz";
+import { initialQuestion, maleQuestions, femaleQuestions } from "../data/quizData";
+import { QuizState, PersonaType, UserSex } from "../types/quiz";
 
 const determinePersona = (answers: string[]): PersonaType => {
   const secondAnswer = answers[1];
@@ -31,6 +31,7 @@ const Index = () => {
     answers: [],
     persona: null,
     isComplete: false,
+    userSex: null
   });
 
   const handleStart = () => {
@@ -42,7 +43,20 @@ const Index = () => {
       setQuizState(prev => {
         const newAnswers = [...prev.answers, answer];
         
-        if (prev.currentQuestion >= quizQuestions.length) {
+        // Handle sex selection
+        if (prev.currentQuestion === 1 && !prev.userSex) {
+          const sex: UserSex = answer === "Masculino" ? "male" : "female";
+          return {
+            ...prev,
+            userSex: sex,
+            currentQuestion: prev.currentQuestion + 1,
+            answers: []
+          };
+        }
+
+        const currentQuestions = prev.userSex === "male" ? maleQuestions : femaleQuestions;
+        
+        if (prev.currentQuestion >= currentQuestions.length + 1) {
           return {
             ...prev,
             answers: newAnswers,
@@ -72,16 +86,29 @@ const Index = () => {
     return <WelcomeScreen onStart={handleStart} />;
   }
 
-  const currentQuestion = quizQuestions[quizState.currentQuestion - 1];
+  if (quizState.currentQuestion === 1) {
+    return (
+      <QuizQuestion
+        question={initialQuestion}
+        onAnswer={handleAnswer}
+        currentStep={1}
+        totalSteps={5}
+      />
+    );
+  }
+
+  const questions = quizState.userSex === "male" ? maleQuestions : femaleQuestions;
+  const currentQuestion = questions[quizState.currentQuestion - 2];
 
   return (
     <QuizQuestion
       question={currentQuestion}
       onAnswer={handleAnswer}
       currentStep={quizState.currentQuestion}
-      totalSteps={quizQuestions.length}
+      totalSteps={5}
     />
   );
 };
 
 export default Index;
+

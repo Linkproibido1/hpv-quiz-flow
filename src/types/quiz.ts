@@ -13,9 +13,13 @@ export type PersonaType =
   | "tratamento"
   | "negacao";
 
+export type UserSex = "male" | "female";
+
 export type QuizState = {
   currentQuestion: number;
   answers: string[];
   persona: PersonaType | null;
   isComplete: boolean;
+  userSex: UserSex | null;
 };
+

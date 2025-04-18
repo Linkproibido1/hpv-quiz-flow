@@ -1,7 +1,58 @@
-
 import { QuizQuestion } from "../types/quiz";
 
-export const quizQuestions: QuizQuestion[] = [
+export const initialQuestion: QuizQuestion = {
+  id: 0,
+  question: "Por favor, selecione seu sexo para uma análise personalizada:",
+  options: ["Masculino", "Feminino"]
+};
+
+export const maleQuestions: QuizQuestion[] = [
+  {
+    id: 1,
+    question: "Há quanto tempo você percebeu as primeiras verrugas?",
+    options: [
+      "Menos de 1 mês",
+      "1-3 meses",
+      "3-6 meses",
+      "Mais de 6 meses",
+      "Ainda não tenho certeza se é HPV"
+    ]
+  },
+  {
+    id: 2,
+    question: "Qual destes é seu MAIOR incômodo em relação às verrugas genitais?",
+    options: [
+      "A vergonha e constrangimento em momentos íntimos",
+      "A aparência das verrugas (questão estética)",
+      "Medo de complicações graves como câncer",
+      "Preocupação em transmitir para parceiros",
+      "Tratamentos anteriores que não funcionaram",
+      "Não me incomoda muito, só quero eliminar"
+    ]
+  },
+  {
+    id: 3,
+    question: "De 0 a 10, qual a URGÊNCIA em resolver este problema agora?",
+    options: [
+      "8-10 (Alta urgência)",
+      "5-7 (Média urgência)",
+      "1-4 (Baixa urgência)"
+    ]
+  },
+  {
+    id: 4,
+    question: "Você já tentou outros tratamentos para as verrugas?",
+    options: [
+      "Sim, fiz cauterização (queimagem)",
+      "Sim, usei ácidos/cremes",
+      "Sim, outros procedimentos médicos",
+      "Não, nunca tratei",
+      "Tentei remédios caseiros"
+    ]
+  }
+];
+
+export const femaleQuestions: QuizQuestion[] = [
   {
     id: 1,
     question: "Há quanto tempo você percebeu as primeiras verrugas?",
