@@ -39,13 +39,6 @@ export const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
         </p>
       </div>
 
-      <div className="bg-red-50 border border-red-200 p-3 rounded-lg flex items-center justify-center gap-2">
-        <Check className="text-red-600" />
-        <span className="text-red-800 font-bold">
-          ATENÇÃO: RESTAM APENAS 7 KITS COM DESCONTO EXCLUSIVO HOJE!
-        </span>
-      </div>
-
       <div className="grid grid-cols-2 gap-3 text-sm">
         <div className="bg-blue-50 p-3 rounded-lg">
           <div className="font-bold text-blue-900 text-xl">23mil+</div>
