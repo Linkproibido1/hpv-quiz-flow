@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
 import { QuizQuestion as QuizQuestionType } from "../types/quiz";
 import { ArrowRight, MessageCircle, CheckCircle } from "lucide-react";
 
@@ -36,13 +37,12 @@ export const QuizQuestion = ({
     }
   };
 
+  const progressPercentage = (currentStep / totalSteps) * 100;
+
   return (
     <div className="max-w-2xl mx-auto p-6 space-y-6 bg-white rounded-lg shadow-lg animate-fade-in">
-      <div className="w-full bg-gray-200 rounded-full h-2 mb-6">
-        <div 
-          className="bg-blue-600 h-2 rounded-full transition-all duration-500"
-          style={{ width: `${(currentStep / totalSteps) * 100}%` }}
-        />
+      <div className="w-full mb-6">
+        <Progress value={progressPercentage} className="h-2" />
       </div>
       
       <h2 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-2">

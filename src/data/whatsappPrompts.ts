@@ -1,4 +1,12 @@
 
+/**
+ * WhatsApp Prompts for AI Assistants
+ * 
+ * These prompts are designed for WhatsApp AI to understand how to offer the product
+ * to customers based on their quiz answers and persona type.
+ * The AI should use these prompts to guide the conversation and handle objections.
+ */
+
 interface WhatsAppPrompt {
   initialMessage: string;
   objections: {
