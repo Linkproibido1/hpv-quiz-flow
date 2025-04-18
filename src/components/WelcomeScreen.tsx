@@ -29,8 +29,7 @@ export const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
       <h1 className="text-2xl font-bold text-blue-900">VERIFICAÇÃO MÉDICA CONFIDENCIAL</h1>
 
       <p className="text-gray-600">
-        Estamos selecionando pessoas para receber nosso tratamento exclusivo à base de Barbatimão que já ajudou mais de 23.000 pessoas a eliminar definitivamente as verrugas do HPV.
-      </p>
+🔥 Selecionamos pessoas para testar nosso tratamento exclusivo com Barbatimão, que já eliminou as verrugas do HPV em mais de 23.000 pessoas. Quer se livrar disso de vez?
       
       <div className="bg-yellow-50 border border-yellow-200 p-3 rounded-lg flex items-center gap-3">
         <AlertTriangle className="text-yellow-600 flex-shrink-0" />
