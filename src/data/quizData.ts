@@ -1,4 +1,3 @@
-
 import { QuizQuestion } from "../types/quiz";
 
 export const initialQuestion: QuizQuestion = {
@@ -37,11 +36,11 @@ const commonQuestions: QuizQuestion[] = [
   },
   {
     id: 4,
-    question: "🔥 ATENÇÃO! Nosso tratamento com Barbatimão já ajudou mais de 10.000 pessoas a eliminar as verrugas em menos de 30 dias, sem dor e sem cicatrizes. Se você pudesse eliminar TODAS as suas verrugas com um tratamento 100% natural e discreto, você:",
+    question: "✅ EXCLUSIVO: 10.000 pessoas já eliminaram TODAS as verrugas em 30 DIAS com nosso tratamento REVOLUCIONÁRIO! 🔥 Quer descobrir como?",
     options: [
-      "Sim, quero eliminar minhas verrugas",
-      "Preciso pensar mais",
-      "Não tenho interesse"
+      "SIM! Quero conhecer o tratamento agora",
+      "Tenho dúvidas, preciso de mais informações",
+      "Não estou interessado(a)"
     ]
   },
   {

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { QuizQuestion as QuizQuestionType } from "../types/quiz";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle, CheckCircle } from "lucide-react";
 
 interface QuizQuestionProps {
   question: QuizQuestionType;
@@ -26,9 +26,14 @@ export const QuizQuestion = ({
 }: QuizQuestionProps) => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
 
-  const handleAnswer = (answer: string) => {
+  const handleOptionSelect = (answer: string) => {
     setSelectedAnswer(answer);
-    onAnswer(answer);
+  };
+
+  const handleContinue = () => {
+    if (selectedAnswer) {
+      onAnswer(selectedAnswer);
+    }
   };
 
   return (
@@ -40,8 +45,9 @@ export const QuizQuestion = ({
         />
       </div>
       
-      <h2 className="text-xl font-semibold text-gray-900 mb-2">
+      <h2 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-2">
         Pergunta {currentStep} de {totalSteps}
+        {currentStep === 4 && <CheckCircle className="text-green-500" />}
       </h2>
       
       <p className="text-gray-700 text-lg mb-4">
@@ -61,7 +67,7 @@ export const QuizQuestion = ({
         {question.options.map((option, index) => (
           <Button
             key={index}
-            onClick={() => handleAnswer(option)}
+            onClick={() => handleOptionSelect(option)}
             variant={selectedAnswer === option ? "default" : "outline"}
             className={`w-full justify-start text-left p-4 h-auto ${
               selectedAnswer === option 
@@ -76,7 +82,7 @@ export const QuizQuestion = ({
 
       {selectedAnswer && (
         <Button
-          onClick={() => onAnswer(selectedAnswer)}
+          onClick={handleContinue}
           className="w-full bg-green-600 hover:bg-green-700 text-white mt-4 py-6 text-lg font-medium rounded-lg flex items-center justify-center gap-2"
         >
           Continuar

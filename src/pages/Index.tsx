@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { WelcomeScreen } from "../components/WelcomeScreen";
 import { QuizQuestion } from "../components/QuizQuestion";
@@ -6,8 +7,8 @@ import { initialQuestion, maleQuestions, femaleQuestions } from "../data/quizDat
 import { QuizState, PersonaType, UserSex } from "../types/quiz";
 
 const determinePersona = (answers: string[]): PersonaType => {
-  const timeWithIssue = answers[2]; // Há quanto tempo surgiram
-  const hasTreatment = answers[3]; // Se já tentou tratamento
+  const timeWithIssue = answers[2]; 
+  const hasTreatment = answers[3]; 
   
   if (hasTreatment.includes("Sim")) {
     return "tratamento";
