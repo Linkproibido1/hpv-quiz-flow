@@ -6,97 +6,71 @@ export const initialQuestion: QuizQuestion = {
   options: ["Masculino", "Feminino"]
 };
 
-export const maleQuestions: QuizQuestion[] = [
+const commonQuestions: QuizQuestion[] = [
   {
     id: 1,
-    question: "Há quanto tempo você percebeu as primeiras verrugas?",
+    question: "Quantas verrugas você possui atualmente?",
     options: [
-      "Menos de 1 mês",
-      "1-3 meses",
-      "3-6 meses",
-      "Mais de 6 meses",
-      "Ainda não tenho certeza se é HPV"
+      "1-3 verrugas",
+      "4-6 verrugas",
+      "Mais de 6 verrugas",
+      "Não tenho certeza"
     ]
   },
   {
     id: 2,
-    question: "Qual destes é seu MAIOR incômodo em relação às verrugas genitais?",
+    question: "Em quais regiões as verrugas estão localizadas?",
     options: [
-      "A vergonha e constrangimento em momentos íntimos",
-      "A aparência das verrugas (questão estética)",
-      "Medo de complicações graves como câncer",
-      "Preocupação em transmitir para parceiros",
-      "Tratamentos anteriores que não funcionaram",
-      "Não me incomoda muito, só quero eliminar"
+      "Região genital externa",
+      "Região anal",
+      "Ambas as regiões",
+      "Outras regiões"
     ]
   },
   {
     id: 3,
-    question: "De 0 a 10, qual a URGÊNCIA em resolver este problema agora?",
+    question: "Há quanto tempo as verrugas surgiram?",
     options: [
-      "8-10 (Alta urgência)",
-      "5-7 (Média urgência)",
-      "1-4 (Baixa urgência)"
+      "Menos de 1 mês",
+      "1-3 meses",
+      "3-6 meses",
+      "Mais de 6 meses"
     ]
   },
   {
     id: 4,
-    question: "Você já tentou outros tratamentos para as verrugas?",
+    question: "Você já tentou algum outro tratamento?",
     options: [
-      "Sim, fiz cauterização (queimagem)",
-      "Sim, usei ácidos/cremes",
-      "Sim, outros procedimentos médicos",
-      "Não, nunca tratei",
-      "Tentei remédios caseiros"
+      "Sim, cauterização",
+      "Sim, ácidos/pomadas",
+      "Sim, outros tratamentos",
+      "Não, nunca tratei"
+    ]
+  },
+  {
+    id: 5,
+    question: "Você tem parceiro(a) fixo(a) ou é casado(a)?",
+    options: [
+      "Sim, tenho parceiro(a) fixo(a)",
+      "Sim, sou casado(a)",
+      "Não tenho parceiro(a) fixo(a)",
+      "Prefiro não responder"
+    ]
+  },
+  {
+    id: 6,
+    question: "Você já fez exame para confirmar o HPV?",
+    options: [
+      "Sim, tenho confirmação",
+      "Não, apenas suspeita",
+      "Aguardando resultado",
+      "Não sei se preciso fazer"
     ]
   }
 ];
 
-export const femaleQuestions: QuizQuestion[] = [
-  {
-    id: 1,
-    question: "Há quanto tempo você percebeu as primeiras verrugas?",
-    options: [
-      "Menos de 1 mês",
-      "1-3 meses",
-      "3-6 meses",
-      "Mais de 6 meses",
-      "Ainda não tenho certeza se é HPV"
-    ]
-  },
-  {
-    id: 2,
-    question: "Qual destes é seu MAIOR incômodo em relação às verrugas genitais?",
-    options: [
-      "A vergonha e constrangimento em momentos íntimos",
-      "A aparência das verrugas (questão estética)",
-      "Medo de complicações graves como câncer",
-      "Preocupação em transmitir para parceiros",
-      "Tratamentos anteriores que não funcionaram",
-      "Não me incomoda muito, só quero eliminar"
-    ]
-  },
-  {
-    id: 3,
-    question: "De 0 a 10, qual a URGÊNCIA em resolver este problema agora?",
-    options: [
-      "8-10 (Alta urgência)",
-      "5-7 (Média urgência)",
-      "1-4 (Baixa urgência)"
-    ]
-  },
-  {
-    id: 4,
-    question: "Você já tentou outros tratamentos para as verrugas?",
-    options: [
-      "Sim, fiz cauterização (queimagem)",
-      "Sim, usei ácidos/cremes",
-      "Sim, outros procedimentos médicos",
-      "Não, nunca tratei",
-      "Tentei remédios caseiros"
-    ]
-  }
-];
+export const maleQuestions = commonQuestions;
+export const femaleQuestions = commonQuestions;
 
 export const personaMessages = {
   vergonha: {

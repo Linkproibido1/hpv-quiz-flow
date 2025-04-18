@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { WelcomeScreen } from "../components/WelcomeScreen";
 import { QuizQuestion } from "../components/QuizQuestion";
@@ -7,21 +6,15 @@ import { initialQuestion, maleQuestions, femaleQuestions } from "../data/quizDat
 import { QuizState, PersonaType, UserSex } from "../types/quiz";
 
 const determinePersona = (answers: string[]): PersonaType => {
-  const secondAnswer = answers[1];
+  const timeWithIssue = answers[2]; // Há quanto tempo surgiram
+  const hasTreatment = answers[3]; // Se já tentou tratamento
   
-  switch (secondAnswer) {
-    case "A vergonha e constrangimento em momentos íntimos":
-      return "vergonha";
-    case "A aparência das verrugas (questão estética)":
-      return "estetica";
-    case "Medo de complicações graves como câncer":
-      return "medo";
-    case "Preocupação em transmitir para parceiros":
-      return "transmissao";
-    case "Tratamentos anteriores que não funcionaram":
-      return "tratamento";
-    default:
-      return "negacao";
+  if (hasTreatment.includes("Sim")) {
+    return "tratamento";
+  } else if (timeWithIssue.includes("Mais de 6 meses")) {
+    return "negacao";
+  } else {
+    return "medo";
   }
 };
 
@@ -111,4 +104,3 @@ const Index = () => {
 };
 
 export default Index;
-
