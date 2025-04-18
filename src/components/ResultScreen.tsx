@@ -48,7 +48,7 @@ export const ResultScreen = ({ persona, onContact }: ResultScreenProps) => {
 
           <div className="bg-red-50 p-4 rounded-lg border border-red-200">
             <p className="text-red-600 font-bold text-center">
-              ⚠️ ATENÇÃO: Apenas 7 kits com 70% OFF disponíveis hoje!
+              ⚠️ ATENÇÃO: Apenas 7 kits disponíveis hoje!
             </p>
           </div>
         </div>
