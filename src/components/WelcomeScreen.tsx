@@ -32,13 +32,6 @@ export const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
         🔥 Selecionamos pessoas para testar nosso tratamento exclusivo com Barbatimão, que já eliminou as verrugas do HPV em mais de 23.000 pessoas. Quer se livrar disso de vez?
       </p>
 
-      <div className="bg-yellow-50 border border-yellow-200 p-3 rounded-lg flex items-center gap-3">
-        <AlertTriangle className="text-yellow-600 flex-shrink-0" />
-        <p className="text-yellow-800 text-sm">
-          IMPORTANTE: Esta consulta é 100% privada e confidencial.
-        </p>
-      </div>
-
       <div className="grid grid-cols-2 gap-3 text-sm">
         <div className="bg-blue-50 p-3 rounded-lg">
           <div className="font-bold text-blue-900 text-xl">23mil+</div>
@@ -57,6 +50,13 @@ export const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
         FAZER AVALIAÇÃO GRATUITA 👉
       </Button>
 
+      <div className="bg-yellow-50 border border-yellow-200 p-3 rounded-lg flex items-center gap-3">
+        <AlertTriangle className="text-yellow-600 flex-shrink-0" />
+        <p className="text-yellow-800 text-sm">
+          IMPORTANTE: Esta consulta é 100% privada e confidencial.
+        </p>
+      </div>
+      
       <div className="flex flex-col items-center gap-2 text-sm text-gray-600">
         <div className="flex items-center gap-2">
           <Check className="text-green-600" />
