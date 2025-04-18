@@ -1,7 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { PersonaType } from "../types/quiz";
 import { personaMessages } from "../data/quizData";
+import { whatsappPrompts } from "../data/whatsappPrompts";
 import { AlertTriangle, MessageCircle, ShieldCheck, CheckCircle2, Timer } from "lucide-react";
 
 interface ResultScreenProps {
@@ -11,6 +11,12 @@ interface ResultScreenProps {
 
 export const ResultScreen = ({ persona, onContact }: ResultScreenProps) => {
   const message = personaMessages[persona];
+  const whatsappPrompt = whatsappPrompts[persona];
+
+  const handleContact = () => {
+    const text = encodeURIComponent(whatsappPrompt.initialMessage);
+    window.location.href = `https://wa.me/SEU_NUMERO?text=${text}`;
+  };
 
   return (
     <div className="max-w-2xl mx-auto p-6 space-y-6 bg-white rounded-lg shadow-lg animate-fade-in">
@@ -63,7 +69,7 @@ export const ResultScreen = ({ persona, onContact }: ResultScreenProps) => {
 
       <div className="space-y-4">
         <Button 
-          onClick={onContact}
+          onClick={handleContact}
           className="w-full bg-green-600 hover:bg-green-700 text-white py-6 text-lg font-medium rounded-lg flex items-center justify-center gap-2 animate-pulse"
         >
           <MessageCircle className="w-5 h-5" />
