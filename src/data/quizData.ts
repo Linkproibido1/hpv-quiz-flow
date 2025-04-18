@@ -1,3 +1,4 @@
+
 import { QuizQuestion } from "../types/quiz";
 
 export const initialQuestion: QuizQuestion = {
@@ -36,6 +37,15 @@ const commonQuestions: QuizQuestion[] = [
   },
   {
     id: 4,
+    question: "🔥 ATENÇÃO! Nosso tratamento com Barbatimão já ajudou mais de 10.000 pessoas a eliminar as verrugas em menos de 30 dias, sem dor e sem cicatrizes. Se você pudesse eliminar TODAS as suas verrugas com um tratamento 100% natural e discreto, você:",
+    options: [
+      "Sim, quero eliminar minhas verrugas",
+      "Preciso pensar mais",
+      "Não tenho interesse"
+    ]
+  },
+  {
+    id: 5,
     question: "Você já tentou algum outro tratamento?",
     options: [
       "Sim, cauterização",
@@ -44,7 +54,7 @@ const commonQuestions: QuizQuestion[] = [
     ]
   },
   {
-    id: 5,
+    id: 6,
     question: "Você tem parceiro(a) fixo(a) ou é casado(a)?",
     options: [
       "Sim, tenho parceiro(a) fixo(a)",
@@ -53,7 +63,7 @@ const commonQuestions: QuizQuestion[] = [
     ]
   },
   {
-    id: 6,
+    id: 7,
     question: "Você já fez exame para confirmar o HPV?",
     options: [
       "Sim, tenho confirmação",
