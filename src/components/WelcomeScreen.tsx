@@ -21,11 +21,6 @@ export const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
         />
       </div>
 
-      <div className="flex items-center justify-center gap-2 text-blue-600">
-        <Stethoscope className="w-5 h-5" />
-        <span className="text-sm font-medium">Análise Médica Especializada</span>
-      </div>
-
       <h1 className="text-2xl font-bold text-blue-900">VERIFICAÇÃO MÉDICA CONFIDENCIAL</h1>
 
       <p className="text-gray-600">
