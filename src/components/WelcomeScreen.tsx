@@ -9,11 +9,15 @@ interface WelcomeScreenProps {
 export const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
   return (
     <div className="max-w-md mx-auto p-6 space-y-6 text-center bg-white rounded-lg shadow-lg animate-fade-in">
-      <div className="flex justify-center mb-4">
+      <div className="flex items-center justify-center gap-2 bg-blue-50 p-3 rounded-lg mb-4">
+        <span className="text-blue-800 text-sm font-medium">Protegido por sigilo médico</span>
+      </div>
+
+      <div className="flex justify-center mb-6">
         <img 
           src="https://i.ibb.co/21cgqQk7/Design-sem-nome-17-removebg-preview-1.png" 
           alt="Especialista Médico" 
-          className="w-32 h-32 object-contain rounded-full border-4 border-blue-100 shadow-md"
+          className="w-64 h-64 object-contain rounded-full border-4 border-blue-100 shadow-md"
         />
       </div>
 
@@ -23,10 +27,6 @@ export const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
       </div>
 
       <h1 className="text-2xl font-bold text-blue-900">VERIFICAÇÃO MÉDICA CONFIDENCIAL</h1>
-      
-      <div className="flex items-center justify-center gap-2 bg-blue-50 p-3 rounded-lg">
-        <span className="text-blue-800 text-sm font-medium">Protegido por sigilo médico</span>
-      </div>
 
       <p className="text-gray-600">
         Estamos selecionando pessoas para receber nosso tratamento exclusivo à base de Barbatimão que já ajudou mais de 23.000 pessoas a eliminar definitivamente as verrugas do HPV.
