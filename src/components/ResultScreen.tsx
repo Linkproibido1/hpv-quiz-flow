@@ -16,30 +16,33 @@ export const ResultScreen = ({ persona, onContact, userAnswers = [] }: ResultScr
   
   const createPersonalizedMessage = () => {
     // Iniciar a mensagem com o cabeçalho em maiúsculas
-    let personalizedMessage = "OLÁ! ACABEI DE FAZER O QUIZ E ESSES FORAM MEUS RESULTADOS:\n\n";
+    let personalizedMessage = "📋 RESULTADO DO QUIZ:\n\n";
     
-    // Adicionar as respostas formatadas
+    // Adicionar as respostas formatadas em lista numerada
     if (userAnswers && userAnswers.length > 0) {
-      // Problema (resposta 1)
-      personalizedMessage += `PROBLEMA: ${userAnswers[0] || "Não informado"}\n`;
+      personalizedMessage += "1️⃣ LOCALIZAÇÃO DAS VERRUGAS:\n";
+      personalizedMessage += `➡️ ${userAnswers[0] || "Não informado"}\n\n`;
       
-      // Tempo com o problema (resposta 2)
-      personalizedMessage += `TEMPO COM O PROBLEMA: ${userAnswers[1] || "Não informado"}\n`;
+      personalizedMessage += "2️⃣ TEMPO COM AS VERRUGAS:\n";
+      personalizedMessage += `➡️ ${userAnswers[1] || "Não informado"}\n\n`;
       
-      // Histórico de tratamentos (resposta 3)
-      let tratamento = "Não informado";
-      if (userAnswers[2]) {
-        tratamento = userAnswers[2];
-      }
-      personalizedMessage += `JÁ TENTEI OUTROS TRATAMENTOS: ${tratamento}\n`;
+      personalizedMessage += "3️⃣ HISTÓRICO DE TRATAMENTOS:\n";
+      personalizedMessage += `➡️ ${userAnswers[2] || "Não informado"}\n\n`;
+      
+      personalizedMessage += "4️⃣ NÍVEL DE DOR/DESCONFORTO:\n";
+      personalizedMessage += `➡️ ${userAnswers[3] || "Não informado"}\n\n`;
+      
+      personalizedMessage += "5️⃣ IMPACTO NA VIDA ÍNTIMA:\n";
+      personalizedMessage += `➡️ ${userAnswers[4] || "Não informado"}\n\n`;
+      
+      personalizedMessage += "6️⃣ NÍVEL DE PREOCUPAÇÃO:\n";
+      personalizedMessage += `➡️ ${userAnswers[5] || "Não informado"}\n\n`;
     } else {
-      personalizedMessage += "PROBLEMA: Não informado\n";
-      personalizedMessage += "TEMPO COM O PROBLEMA: Não informado\n";
-      personalizedMessage += "JÁ TENTEI OUTROS TRATAMENTOS: Não informado\n";
+      personalizedMessage += "❌ NENHUMA RESPOSTA REGISTRADA\n\n";
     }
     
     // Adicionar a pergunta final
-    personalizedMessage += "\nQUERO SABER QUAL O MELHOR PROTOCOLO DE TRATAMENTO PARA MINHA SITUAÇÃO?";
+    personalizedMessage += "✅ SOLICITO AVALIAÇÃO DO MEU CASO E INDICAÇÃO DO MELHOR PROTOCOLO DE TRATAMENTO.";
     
     return personalizedMessage;
   };
