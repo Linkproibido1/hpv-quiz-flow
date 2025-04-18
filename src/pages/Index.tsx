@@ -50,7 +50,8 @@ const Index = () => {
 
         const currentQuestions = prev.userSex === "male" ? maleQuestions : femaleQuestions;
         
-        if (prev.currentQuestion >= currentQuestions.length + 1) {
+        // Check if we've reached the end (8 questions total)
+        if (prev.currentQuestion >= 8) {
           return {
             ...prev,
             answers: newAnswers,
@@ -86,7 +87,7 @@ const Index = () => {
         question={initialQuestion}
         onAnswer={handleAnswer}
         currentStep={1}
-        totalSteps={5}
+        totalSteps={8}
       />
     );
   }
@@ -99,7 +100,7 @@ const Index = () => {
       question={currentQuestion}
       onAnswer={handleAnswer}
       currentStep={quizState.currentQuestion}
-      totalSteps={5}
+      totalSteps={8}
     />
   );
 };

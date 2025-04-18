@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -37,7 +36,7 @@ export const QuizQuestion = ({
     }
   };
 
-  const progressPercentage = (currentStep / totalSteps) * 100;
+  const progressPercentage = (currentStep / 8) * 100;
 
   return (
     <div className="max-w-2xl mx-auto p-6 space-y-6 bg-white rounded-lg shadow-lg animate-fade-in">
@@ -46,8 +45,8 @@ export const QuizQuestion = ({
       </div>
       
       <h2 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-2">
-        Pergunta {currentStep} de {totalSteps}
-        {currentStep === 4 && <CheckCircle className="text-green-500" />}
+        Pergunta {currentStep} de 8
+        {currentStep === 8 && <CheckCircle className="text-green-500" />}
       </h2>
       
       <p className="text-gray-700 text-lg mb-4">
