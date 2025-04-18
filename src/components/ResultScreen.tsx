@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { PersonaType } from "../types/quiz";
 import { personaMessages } from "../data/quizData";
@@ -15,7 +16,7 @@ export const ResultScreen = ({ persona, onContact }: ResultScreenProps) => {
 
   const handleContact = () => {
     const text = encodeURIComponent(whatsappPrompt.initialMessage);
-    window.location.href = `https://wa.me/SEU_NUMERO?text=${text}`;
+    window.location.href = `https://wa.me/5582987666097?text=${text}`;
   };
 
   return (
