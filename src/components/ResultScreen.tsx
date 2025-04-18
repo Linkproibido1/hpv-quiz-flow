@@ -14,11 +14,24 @@ interface ResultScreenProps {
 export const ResultScreen = ({ persona, onContact, userAnswers = [] }: ResultScreenProps) => {
   const message = personaMessages[persona];
   const whatsappPrompt = whatsappPrompts[persona];
-
+  
   const createPersonalizedMessage = () => {
-    let personalizedMessage = whatsappPrompt.initialMessage;
+    // Adicionamos um prefixo para a IA identificar facilmente
+    let personalizedMessage = `[QUIZ_DATA]|${persona}|`;
     
-    // Add personalization based on user answers if they exist
+    // Adicionamos as respostas do cliente num formato que sua IA possa processar
+    if (userAnswers && userAnswers.length > 0) {
+      personalizedMessage += `${userAnswers[0] || "nao_informado"}|`;
+      personalizedMessage += `${userAnswers[1] || "nao_informado"}|`;
+      personalizedMessage += `${userAnswers[2] || "nao_informado"}|`;
+    } else {
+      personalizedMessage += "nao_informado|nao_informado|nao_informado|";
+    }
+    
+    // Agora começamos a mensagem regular para o cliente
+    personalizedMessage += "\n\n" + whatsappPrompt.initialMessage;
+    
+    // Add personalization based on user answers if they exist - mantendo seu código original
     if (userAnswers && userAnswers.length > 0) {
       // Add specific concerns based on answers
       if (userAnswers[0]) {
@@ -40,12 +53,12 @@ export const ResultScreen = ({ persona, onContact, userAnswers = [] }: ResultScr
       }
     }
     
-    // Add closing statement
+    // Add closing statement - mantendo seu código original
     personalizedMessage += "\n\nEstamos prontos para te ajudar. Quando podemos começar seu tratamento?";
     
     return personalizedMessage;
   };
-
+  
   const handleContact = () => {
     const personalizedText = encodeURIComponent(createPersonalizedMessage());
     window.location.href = `https://wa.me/5582987666097?text=${personalizedText}`;
