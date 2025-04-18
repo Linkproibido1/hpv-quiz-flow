@@ -13,7 +13,7 @@ export const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
         <img 
           src="https://i.ibb.co/21cgqQk7/Design-sem-nome-17-removebg-preview-1.png" 
           alt="Especialista Médico" 
-          className="w-32 h-32 object-cover rounded-full border-4 border-blue-100 shadow-md"
+          className="w-32 h-32 object-contain rounded-full border-4 border-blue-100 shadow-md"
         />
       </div>
 
