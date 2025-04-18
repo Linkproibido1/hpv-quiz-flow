@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Shield, AlertTriangle, Check, Star, Stethoscope, BadgeCheck, FileLock2 } from "lucide-react";
+import { Shield, AlertTriangle, Check, Stethoscope } from "lucide-react";
 
 interface WelcomeScreenProps {
   onStart: () => void;
@@ -9,20 +9,23 @@ interface WelcomeScreenProps {
 export const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
   return (
     <div className="max-w-md mx-auto p-6 space-y-6 text-center bg-white rounded-lg shadow-lg animate-fade-in">
-      <div className="flex justify-center items-center gap-2">
-        <Stethoscope className="w-16 h-16 text-blue-800" />
+      <div className="flex justify-center mb-4">
+        <img 
+          src="https://i.ibb.co/21cgqQk7/Design-sem-nome-17-removebg-preview-1.png" 
+          alt="Especialista Médico" 
+          className="w-32 h-32 object-cover rounded-full border-4 border-blue-100 shadow-md"
+        />
       </div>
 
       <div className="flex items-center justify-center gap-2 text-blue-600">
-        <BadgeCheck className="w-5 h-5" />
+        <Stethoscope className="w-5 h-5" />
         <span className="text-sm font-medium">Análise Médica Especializada</span>
       </div>
 
       <h1 className="text-2xl font-bold text-blue-900">VERIFICAÇÃO MÉDICA CONFIDENCIAL</h1>
       
       <div className="flex items-center justify-center gap-2 bg-blue-50 p-3 rounded-lg">
-        <FileLock2 className="text-blue-600" />
-        <p className="text-blue-800 text-sm font-medium">Protegido por sigilo médico</p>
+        <span className="text-blue-800 text-sm font-medium">Protegido por sigilo médico</span>
       </div>
 
       <p className="text-gray-600">
@@ -36,22 +39,11 @@ export const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
         </p>
       </div>
 
-      <div className="flex flex-col gap-4">
-        <div className="flex items-center justify-center gap-2">
-          <div className="flex -space-x-2">
-            {[...Array(5)].map((_, i) => (
-              <div key={i} className="w-8 h-8 rounded-full bg-blue-100 border-2 border-white flex items-center justify-center">
-                <Star className="w-4 h-4 text-yellow-500" />
-              </div>
-            ))}
-          </div>
-          <span className="text-sm text-gray-600">4.9/5 de satisfação</span>
-        </div>
-
-        <div className="text-sm text-gray-500 flex items-center justify-center gap-2">
-          <Check className="text-green-600" />
-          <span>Restam apenas 7 kits com desconto exclusivo hoje</span>
-        </div>
+      <div className="bg-red-50 border border-red-200 p-3 rounded-lg flex items-center justify-center gap-2">
+        <Check className="text-red-600" />
+        <span className="text-red-800 font-bold">
+          ATENÇÃO: RESTAM APENAS 7 KITS COM DESCONTO EXCLUSIVO HOJE!
+        </span>
       </div>
 
       <div className="grid grid-cols-2 gap-3 text-sm">
@@ -73,10 +65,6 @@ export const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
         <div className="flex items-center gap-2">
           <Check className="text-green-600" />
           <span>Recomendado por Médicos</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <Check className="text-green-600" />
-          <span>Tratamento Patenteado</span>
         </div>
         <div className="flex items-center gap-2">
           <Check className="text-green-600" />
