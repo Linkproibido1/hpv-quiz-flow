@@ -57,6 +57,13 @@ export const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
         </div>
       </div>
 
+      <Button 
+        onClick={onStart}
+        className="w-full bg-green-500 hover:bg-green-600 text-white py-6 text-lg font-medium rounded-lg transition-colors"
+      >
+        FAZER AVALIAÇÃO GRATUITA 👉
+      </Button>
+
       <div className="flex flex-col items-center gap-2 text-sm text-gray-600">
         <div className="flex items-center gap-2">
           <Check className="text-green-600" />
@@ -71,14 +78,7 @@ export const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
           <span>Garantia de 30 dias</span>
         </div>
       </div>
-
-      <Button 
-        onClick={onStart}
-        className="w-full bg-green-500 hover:bg-green-600 text-white py-6 text-lg font-medium rounded-lg transition-colors"
-      >
-        FAZER AVALIAÇÃO GRATUITA 👉
-      </Button>
-
+      
       <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
         <Shield className="w-4 h-4" />
         <span>Seus dados estão protegidos por criptografia</span>
