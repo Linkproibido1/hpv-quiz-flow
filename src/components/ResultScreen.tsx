@@ -8,15 +8,47 @@ import { AlertTriangle, MessageCircle, ShieldCheck, CheckCircle2, Timer } from "
 interface ResultScreenProps {
   persona: PersonaType;
   onContact: () => void;
+  userAnswers?: string[];
 }
 
-export const ResultScreen = ({ persona, onContact }: ResultScreenProps) => {
+export const ResultScreen = ({ persona, onContact, userAnswers = [] }: ResultScreenProps) => {
   const message = personaMessages[persona];
   const whatsappPrompt = whatsappPrompts[persona];
 
+  const createPersonalizedMessage = () => {
+    let personalizedMessage = whatsappPrompt.initialMessage;
+    
+    // Add personalization based on user answers if they exist
+    if (userAnswers && userAnswers.length > 0) {
+      // Add specific concerns based on answers
+      if (userAnswers[0]) {
+        personalizedMessage += `\n\nVocê mencionou que está com "${userAnswers[0]}". `;
+      }
+      
+      // Add time with problem if it exists (answer 2)
+      if (userAnswers[1]) {
+        personalizedMessage += `Entendo que você está enfrentando isso há "${userAnswers[1]}". `;
+      }
+      
+      // Add treatment history if it exists (answer 3)
+      if (userAnswers[2]) {
+        if (userAnswers[2].includes("Sim")) {
+          personalizedMessage += `Vejo que você já tentou outros tratamentos. Nossa solução é diferente! `;
+        } else {
+          personalizedMessage += `Vejo que você ainda não tentou tratamentos. Temos excelentes resultados para casos como o seu! `;
+        }
+      }
+    }
+    
+    // Add closing statement
+    personalizedMessage += "\n\nEstamos prontos para te ajudar. Quando podemos começar seu tratamento?";
+    
+    return personalizedMessage;
+  };
+
   const handleContact = () => {
-    const text = encodeURIComponent(whatsappPrompt.initialMessage);
-    window.location.href = `https://wa.me/5582987666097?text=${text}`;
+    const personalizedText = encodeURIComponent(createPersonalizedMessage());
+    window.location.href = `https://wa.me/5582987666097?text=${personalizedText}`;
   };
 
   return (

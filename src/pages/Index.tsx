@@ -74,7 +74,11 @@ const Index = () => {
   };
 
   if (quizState.isComplete && quizState.persona) {
-    return <ResultScreen persona={quizState.persona} onContact={handleContact} />;
+    return <ResultScreen 
+      persona={quizState.persona} 
+      onContact={handleContact} 
+      userAnswers={quizState.answers} 
+    />;
   }
 
   if (quizState.currentQuestion === 0) {
