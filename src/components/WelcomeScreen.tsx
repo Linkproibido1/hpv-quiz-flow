@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Shield, AlertTriangle, Check, Stethoscope } from "lucide-react";
 
@@ -21,7 +20,7 @@ export const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
         />
       </div>
 
-      <h1 className="text-2xl font-bold text-blue-900">VERIFICAÇÃO MÉDICA CONFIDENCIAL</h1>
+      <h1 className="text-2xl font-bold text-blue-900">Bióloga Jacque</h1>
 
       <p className="text-gray-600">
         🔥 Selecionamos pessoas para testar nosso tratamento exclusivo com Barbatimão, que já eliminou as verrugas do HPV em mais de 23.000 pessoas. Quer se livrar disso de vez?
