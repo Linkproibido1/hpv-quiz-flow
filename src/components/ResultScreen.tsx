@@ -14,6 +14,17 @@ export const ResultScreen = ({ persona, onContact, userAnswers = [] }: ResultScr
   const message = personaMessages[persona];
   const whatsappPrompt = whatsappPrompts[persona];
   
+  const getUtmParameters = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    return {
+      source: urlParams.get('utm_source') || 'não informado',
+      medium: urlParams.get('utm_medium') || 'não informado',
+      campaign: urlParams.get('utm_campaign') || 'não informado',
+      content: urlParams.get('utm_content') || 'não informado',
+      term: urlParams.get('utm_term') || 'não informado'
+    };
+  };
+  
   const createPersonalizedMessage = () => {
     // Iniciar a mensagem com o cabeçalho em maiúsculas
     let personalizedMessage = "📋 RESULTADO DO QUIZ:\n\n";
@@ -42,7 +53,11 @@ export const ResultScreen = ({ persona, onContact, userAnswers = [] }: ResultScr
     }
     
     // Adicionar a pergunta final
-    personalizedMessage += "✅ SOLICITO AVALIAÇÃO DO MEU CASO E INDICAÇÃO DO MELHOR PROTOCOLO DE TRATAMENTO.";
+    personalizedMessage += "✅ SOLICITO AVALIAÇÃO DO MEU CASO E INDICAÇÃO DO MELHOR PROTOCOLO DE TRATAMENTO.\n\n";
+    
+    // Adicionar informações de UTM
+    const utm = getUtmParameters();
+    personalizedMessage += `📊 Origem: ${utm.source} ${utm.medium} ${utm.campaign} ${utm.content} ${utm.term}`;
     
     return personalizedMessage;
   };
@@ -78,7 +93,7 @@ export const ResultScreen = ({ persona, onContact, userAnswers = [] }: ResultScr
             </div>
             <div className="flex items-center gap-2 text-green-700">
               <CheckCircle2 className="flex-shrink-0" />
-              <span className="font-medium">Elimina o HPV em até 30 dias</span>
+              <span className="font-medium">Elimina o HPV em at�� 30 dias</span>
             </div>
             <div className="flex items-center gap-2 text-green-700">
               <Timer className="flex-shrink-0" />
