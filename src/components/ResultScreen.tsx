@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { PersonaType } from "../types/quiz";
 import { personaMessages } from "../data/quizData";
@@ -19,12 +18,10 @@ export const ResultScreen = ({ persona, onContact, userAnswers = [] }: ResultScr
     const urlParams = new URLSearchParams(window.location.search);
     const queryParams = {};
     
-    // Get all URL parameters dynamically
     for(const [key, value] of urlParams.entries()) {
       queryParams[key] = value || 'não informado';
     }
     
-    // Ensure UTM parameters exist with defaults
     const utmParams = {
       source: queryParams['utm_source'] || 'não informado',
       medium: queryParams['utm_medium'] || 'não informado',
@@ -33,7 +30,6 @@ export const ResultScreen = ({ persona, onContact, userAnswers = [] }: ResultScr
       term: queryParams['utm_term'] || 'não informado'
     };
     
-    // Get additional user parameters if they exist
     const userParams = {
       ref: queryParams['ref'] || 'não informado',
       channel: queryParams['channel'] || 'não informado',
@@ -47,10 +43,8 @@ export const ResultScreen = ({ persona, onContact, userAnswers = [] }: ResultScr
   };
   
   const createPersonalizedMessage = () => {
-    // Iniciar a mensagem com o cabeçalho em maiúsculas
     let personalizedMessage = "📋 RESULTADO DO QUIZ:\n\n";
     
-    // Adicionar as respostas formatadas em lista numerada
     if (userAnswers && userAnswers.length > 0) {
       personalizedMessage += "1️⃣ LOCALIZAÇÃO DAS VERRUGAS:\n";
       personalizedMessage += `➡️ ${userAnswers[0] || "Não informado"}\n\n`;
@@ -73,15 +67,13 @@ export const ResultScreen = ({ persona, onContact, userAnswers = [] }: ResultScr
       personalizedMessage += "❌ NENHUMA RESPOSTA REGISTRADA\n\n";
     }
     
-    // Adicionar a pergunta final
     personalizedMessage += "✅ SOLICITO AVALIAÇÃO DO MEU CASO E INDICAÇÃO DO MELHOR PROTOCOLO DE TRATAMENTO.\n\n";
     
-    // Adicionar todas as informações de tracking
     const params = getUtmParameters();
     personalizedMessage += "📊 INFORMAÇÕES DE ORIGEM:\n";
-    Object.entries(params).forEach(([key, value]) => {
-      personalizedMessage += `${key}: ${value}\n`;
-    });
+    personalizedMessage += Object.entries(params)
+      .map(([key, value]) => `${key}: ${value}`)
+      .join(', ') + '\n';
     
     return personalizedMessage;
   };
